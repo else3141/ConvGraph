@@ -42,19 +42,6 @@ tests/             regression test that pins the example output
 Modules are ordered by dependency: `geometry` knows nothing about graphs,
 `embedding` builds on it, `layout` builds on both plus the segment tree.
 
-## Status and honesty
-
-The layout algorithm is a **constructive heuristic of my own**, with an informal
-correctness argument rather than a formal proof. It is validated empirically: the
-regression test locks its output on the example graph, and every refactoring step
-was checked against a captured baseline.
-
-`dualization.py` is an **unfinished on-ramp.** The intent is to triangulate an
-arbitrary sparse graph and derive the rectangular-dual input automatically. The
-triangulation works; deriving the dual from it does not yet, so the layout stage
-currently takes a hand-prepared adjacency graph. Nothing in the pipeline depends
-on this module — it is kept to show the intended direction.
-
 ## Running it
 
 ```bash
